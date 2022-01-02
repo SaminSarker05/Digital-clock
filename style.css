@@ -1,0 +1,81 @@
+* {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+  position:relative;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.clock {
+  width: 300px;
+  height: 300px;
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+  border: 1px white solid;
+  position: relative;
+}
+
+.clock .nums {
+  --degree: 0deg;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transform: rotate(var(--degree));
+}
+
+.clock .num1 {--degree: 30deg}
+.clock .num2 {--degree: 60deg}
+.clock .num3 {--degree: 90deg}
+.clock .num4 {--degree: 120deg}
+.clock .num5 {--degree: 150deg}
+.clock .num6 {--degree: 180deg}
+.clock .num7 {--degree: 210deg}
+.clock .num8 {--degree: 240deg}
+.clock .num9 {--degree: 270deg}
+.clock .num10 {--degree: 300deg}
+.clock .num11 {--degree: 330deg}
+.clock .num12 {--degree: 360deg}
+
+.clock::after {
+  content: "";
+  position: absolute;
+  background-color: white;
+  z-index: 10;
+  width: 5px;
+  height: 5px;
+  top: 49%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.clock .hand {
+  --degree: 0deg;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  width: 2px;
+  height: 25%;
+  background-color: white;
+  transform-origin: bottom;
+  transform: translateX(-50%) rotate(var(--degree));
+}
+
+.clock .hand.minute {
+  --degree: 30deg;
+  width: 1px;
+  height: 40%;
+}
+
+.clock .hand.second {
+  --degree: 90deg;
+  width: 1px;
+  height: 43%;
+  background-color: red;
+}
