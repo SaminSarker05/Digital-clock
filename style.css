@@ -22,7 +22,7 @@ body {
 }
 
 .clock .nums {
-  --degree: 0deg;
+  --degree: 0;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -56,26 +56,27 @@ body {
 }
 
 .clock .hand {
-  --degree: 0deg;
+  --degree: 0;
   position: absolute;
   bottom: 50%;
   left: 50%;
-  width: 2px;
-  height: 25%;
   background-color: white;
   transform-origin: bottom;
-  transform: translateX(-50%) rotate(var(--degree));
+  transform: translateX(-50%) rotate(calc(var(--degree) * 1deg));
 }
 
 .clock .hand.minute {
-  --degree: 30deg;
   width: 1px;
   height: 40%;
 }
 
 .clock .hand.second {
-  --degree: 90deg;
   width: 1px;
   height: 43%;
   background-color: red;
+}
+
+.clock .hand.hour {
+  width: 2px;
+  height: 25%;
 }
